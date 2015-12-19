@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>全屏slidershow效果</title>
+        <style>
+        	* {
+        		margin: 0;
+        		padding: 0;
+        	}
+
+			/*定义动画*/
+			/*定义sliderleft动画，图片从左向右出现*/
+
+			@keyframes sliderleft {
+				0% {
+					left: -1000px;
+				}
+
+				100% {
+					left: 0;
+				}
+			}
+
+			/*定义zoomin动画，图片由小变大放大出现*/
+			@keyframes zoomin {
+				0% {
+					transform: scale(0.1);
+				}
+
+				100% {
+					transform: none;
+				}
+			}
+
+			@keyframes rotate {
+				0% {
+					transform: rotate(-360deg) scale(0.1);
+				}
+
+				100% {
+					transform: none;
+				}
+			}
+
+			/*将图片全屏显示*/
+			html, body {
+				height: 100%;
+			}
+
+			img.bg {
+				/*设置全屏填充*/
+				min-height: 100%;
+				min-width: 1024px;
+				width: 100%;
+				height: auto !important;
+				height: 100%;
+				/*图片定位*/
+				position: fixed;
+				left: 0;
+				z-index: 1;
+			}
+
+			@media screen (max-width: 1024px) {
+				img.bg {
+					left: 50%;
+					margin-left: -512px;
+				}
+			}
+			/*对小图列表进行简单的样式修饰*/
+			.slider {
+				position: absolute;
+				width: 100%;
+				text-align: center;
+				z-index: 9999;
+				bottom: 100px;
+			}
+
+			.slider li {
+				display: inline-block;
+				width: 170px;
+				height: 130px;
+				margin-right: 15px;
+			}
+
+			.slider a {
+				display: inline-block;
+				width: 170px;
+				padding-top: 70px;
+				padding-bottom: 20px;
+				position: relative;
+				cursor: pointer;
+				border: 2px solid #fff;
+				border-radius: 5px;
+				vertical-align: top;
+				color: #fff;
+				text-decoration: none;
+				font-size: 22px;
+				font-family: "微软雅黑";
+				text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.8),
+							 -2px -2px 1px rgba(0, 0, 0, 0.3),
+							 -3px -3px 1px rgba(0, 0, 0, 0.3);
+
+			}
+
+			.slider li:nth-of-type(1) a {
+				background-image: linear-gradient(to bottom,  #dcc8af, #644f56);
+			}
+
+			.slider li:nth-of-type(2) a {
+				background-image: linear-gradient(to bottom,  #b5c8ce, #8f91aa);
+			}
+
+			.slider li:nth-of-type(3) a {
+				background-image: linear-gradient(to bottom,  #fcf6d8, #ab8b90);
+			}
+
+			.slider a::after {
+				content: "";
+				display: block;
+				height: 120px;
+				width: 120px;
+				border: 5px solid #fff;
+				border-radius: 50%;
+				position: absolute;
+				left: 50%;
+				margin-left: -60px;
+				z-index: 9999;
+				top: -80px;
+			}
+
+			.slider li:nth-of-type(1) a::after {
+				background: url(images/bg1.jpg) no-repeat center;
+			}
+
+			.slider li:nth-of-type(2) a::after {
+				background: url(images/bg2.jpg) no-repeat center;
+			}
+
+			.slider li:nth-of-type(3) a::after {
+				background: url(images/bg3.jpg) no-repeat center;
+			}
+
+			.slider a::before {
+				content: "";
+				display: block;
+				height: 120px;
+				width: 120px;
+				border: 5px solid #fff;
+				border-radius: 50%;
+				position: absolute;
+				left: 50%;
+				margin-left: -60px;
+				z-index: 9999;
+				top: -80px;
+				background: rgba(0, 0, 0, 0.3);
+			}
+
+			.slider a:hover::before {
+				opacity: 0;
+			}
+
+			/*通过伪类：target开启之前定义的动画*/
+			.sliderleft:target {
+				z-index: 100;
+				/*animation-name: sliderleft;
+				animation-duration: 1s;
+				animation-iteration-count: 1;*/
+			}
+
+			.zoomin:target {
+				z-index: 100;
+				/*animation-name: zoomin;
+				animation-duration: 1s;
+				animation-iteration-count: 1;*/
+			}
+			.rotate:target{
+				z-index: 100;
+				/*animation-name: rotate;
+				animation-duration: 1s;
+				animation-iteration-count: 1;*/
+			}
+
+			/*完善：确保点击之后其他动画就要关闭，为了实现这一效果，通过  :not(:target)  来完善*/
+			@keyframes 'nottarget' {
+				0% { z-index: 75;}
+				100% { z-index: 75;}
+			}
+
+			@-webkit-keyframes 'nottarget' {
+				0% { z-index: 75;}
+				100% { z-index: 75;}
+			}
+
+			.bg:not(:target) {
+				animation-name: nottarget;
+				animation-duration: 1s;
+				animation-iteration-count: 1;
+			}
+        </style>
+    </head>
+    <body>
+    	<section class="demo">
+    		<div class="slider">
+    			<ul class="clearfix">
+    				<li><a href="#bg1">哈哈哈啊哈哈哈哈哈哈哈哈</a></li>
+    				<li><a href="#bg2">啦啦啦啦啦啦啦啦啦啦啦啦</a></li>
+    				<li><a href="#bg3">呵呵呵呵呵呵呵呵呵呵呵呵</a></li>
+    			</ul>
+    		</div>
+    		<img src="images/bg1.jpg" alt="" class="bg sliderleft" id="bg1">
+    		<img src="images/bg2.jpg" alt="" class="bg rotate" id="bg2">
+    		<img src="images/bg3.jpg" alt="" class="bg zoomin" id="bg3">
+    	</section> 
+    </body>
+</html>

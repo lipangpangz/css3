@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>move</title>
+  <style>
+    .box{
+      margin: 100px auto;
+      width: 200px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    .bigmove {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      animation: move 1s infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+    }
+    @keyframes move {
+      0% {
+        top: 0;
+      }
+      50% {
+        top: 50px;
+      }
+      100% {
+        top: 100px;
+      }
+    }
+
+    .item1 {
+      width: 100px;
+      height: 10px;
+      background-color: #000;
+      opacity: .5;
+      position: absolute;
+      top: 200px;
+      border-radius: 50%;
+      animation: change 1s infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+    }
+    @keyframes change {
+      0% {
+        width: 100px;
+      }
+      100% {
+        width: 90px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <div class="bigmove"></div>
+  <div class="item1"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 过渡</title>
+	<style>
+		.show {
+			width: 100px;
+			height: 100px;
+			margin: 0 auto;
+			background-color: yellow;
+			/*transition: height 1s, width 0.5s;*/
+			transition: all 1s;
+
+			/*当前元素只要有“属性”发生变化时，可以平滑的进行过渡*/
+		}
+
+		.show:hover {
+			width: 200px;
+			height: 200px;
+			border-radius: 100px;
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="show"></div>
+</body>
+</html>

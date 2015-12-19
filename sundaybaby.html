@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sundaybaby</title>
+  <style>
+  .box {
+    background-color: #90C0F1;
+    width: 600px;
+    height: 300px;
+    margin: 100px auto;
+    position: relative;
+  }
+  .item , .item1{
+    width: 140px;
+    position: absolute;
+    left: 50%;
+    margin-left: -70px;
+  }
+  .item:nth-child(1) .baby {
+    width: 140px;
+    height: 190px;
+    background-color: #fff;
+    border-radius: 70px 70px 0 0;
+  }
+  .item:nth-child(1)::after ,.item:nth-child(1)::before {
+    content: "";
+    position: absolute;
+    top: 60px;
+    left: 45px;
+    width: 18px;
+    height: 22px;
+    border: 1px solid #061E74;
+    border-radius: 18px 18px 18px 18px / 22px 22px 22px 22px;
+  }
+  .item:nth-child(1)::after {
+    left: 90px;
+  }
+  .item:nth-child(1) .baby::after , .item:nth-child(1) .baby::before {
+    content: "";
+    position: absolute;
+    top: 60px;
+    left: 45px;
+    width: 17px;
+    height: 21px;
+    background-color: #061E74;
+    border-radius:50%;
+  }
+  .item:nth-child(1) .baby::after {
+    left: 90px;
+  }
+  .item:nth-child(2) .baby {
+    content: "";
+    position: absolute;
+    top: 90px;
+    left: 70px;
+    width: 16px;
+    height: 20px;
+    border:2px solid #061E74;
+    border-radius: 50%;
+  }
+  .item:nth-child(3) .baby::after , .item:nth-child(3) .baby::before {
+    content: "";
+    position: absolute;
+    top: 184px;
+    left: 50%;
+    margin-left: -70px;
+    height: 12px;
+    width: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+  .item:nth-child(3) .baby::after {
+    margin-left: -45px;
+  }
+  .item:nth-child(4) .baby::after , .item:nth-child(4) .baby::before {
+    content: "";
+    position: absolute;
+    top: 184px;
+    left: 50%;
+    margin-left: -20px;
+    height: 12px;
+    width: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+  .item:nth-child(4) .baby::after {
+    margin-left: 5px;
+  }
+
+  .item:nth-child(5) .baby::after , .item:nth-child(5) .baby::before {
+    content: "";
+    position: absolute;
+    top: 184px;
+    left: 50%;
+    margin-left: 30px;
+    height: 12px;
+    width: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+  .item:nth-child(5) .baby::after {
+    margin-left: 55px;
+    width: 15px;
+    height: 12px;
+    border-radius:0 0 0 50%;
+  }
+  .item1 .baby {
+    position: absolute;
+    top: 250px;
+    height: 10px;
+    width: 140px;
+    background-color: #6790CC;
+    border-radius: 50%;
+    animation: change 6s infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+  }
+   @keyframes change {
+      0% {
+        margin-left: -230px;
+        width: 130px;
+      }
+      25%{
+        margin-left: -5px;
+        width: 140px;
+      }
+      50%{
+        margin-left: 220px;
+        width: 130px;
+      }
+      75%{
+        margin-left: -5px;
+        width: 140px;
+      }
+      100% {
+        width: 130px;
+        margin-left: -230px;
+      }
+    }
+
+  .bigmove {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    margin-left: -230px;
+    animation: move 6s infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+  }
+  @keyframes move {
+      0% {
+        margin-left: -230px;
+        top: 10px;
+      }
+      25%{
+        margin-left: -5px;
+        top: 60px;
+      }
+      50% {
+        margin-left: 220px;
+        top: 10px;
+      }
+      75%{
+        margin-left: -5px;
+        top: 60px;
+      }
+      100% {
+        margin-left: -230px;
+        top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+    <div class="bigmove">
+        <div class="item"><div class="baby"></div></div>
+        <div class="item"><div class="baby"></div></div>
+        <div class="item"><div class="baby"></div></div>
+        <div class="item"><div class="baby"></div></div>
+        <div class="item"><div class="baby"></div></div>
+    </div>
+    <div class="item1"><div class="baby"></div></div>
+</div>
+</body>
+</html>

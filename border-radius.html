@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>border-radius</title>
+  <style>
+    .box {
+      margin: 100px auto;
+      width: 900px;
+      height: 450px;
+    }
+    .item {
+      float: left;
+      margin: 10px 10px;
+      width: 200px;
+      height: 200px;
+      border-radius: 1px;
+      box-shadow: 5px 5px 10px #aaa;
+      display: flex;
+    }
+    .border-radius {
+      width: 180px;
+      height: 180px;
+      border: 1px solid red;
+      margin: auto;
+    }
+    .item:nth-child(1) .border-radius {
+      border-radius: 90px;
+    }
+
+    .item:nth-child(2) .border-radius {
+      border-radius: 90px 90px 0 0;
+    }
+    .item:nth-child(3) .border-radius {
+      border: 90px solid red;
+      width: 0;
+      height: 0;
+      border-color: red green blue pink;
+    }
+    .item:nth-child(4) .border-radius {
+      height: 0;
+      border-style: solid;
+      border-bottom-width: 90px;
+      border-bottom-color: green;
+      border-top-width: 90px;
+      border-top-color: red;
+      border-radius: 90px;
+    }
+    .item:nth-child(5) .border-radius {
+      border: 90px solid red;
+      width: 0;
+      height: 0;
+      border-color: red green blue pink;
+      border-radius: 90px;
+    }
+    /* 四分之一圆 */
+    .item:nth-child(6) .border-radius {
+      border: 90px solid red;
+      width: 0;
+      height: 0;
+      border-right-color: red;
+      border-left-color: transparent;
+      border-top-color: transparent;
+      border-bottom-color:transparent;
+      border-radius: 90px;
+    }
+    .item:nth-child(7) .border-radius {
+      height: 90px;
+      border-radius: 90px 90px 90px 90px / 45px 45px 45px 45px;
+    }
+    .item:nth-child(8) .border-radius {
+      height: 90px;
+      background-color: red;
+      border-bottom: 90px solid green;
+      border-radius: 90px;
+      position: relative;
+    }
+    .item:nth-child(8) .border-radius::after , .item:nth-child(8) .border-radius::before {
+      content: "";
+      width: 30px;
+      height: 30px;
+      background-color: black;
+      position: absolute;
+      top:50%;
+      border-radius: 45px;
+    }
+    .item:nth-child(8) .border-radius::after {
+      border: 30px solid green;
+      left: 0;
+    }
+    .item:nth-child(8) .border-radius::before {
+      border: 30px solid red;
+      right: 0;
+    }
+    .item:nth-child(9) .border-radius{
+      width: 160px;
+      height: 80px;
+      background-color: red;
+      margin: auto;
+      position: relative;
+      border-radius: 15px;
+    }
+    .item:nth-child(9) .border-radius::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: -40px;
+      width: 0px;
+      height: 0px;
+      border: 25px solid red;
+      border-radius: 50%;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+    }
+    .item:nth-child(10) .border-radius {
+      width: 160px;
+      height: 80px;
+      background-color: red;
+      margin: auto;
+      border-radius: 20px;
+      position: relative;
+    }
+    .item:nth-child(10) .border-radius::after , .item:nth-child(10) .border-radius::before {
+      content: "";
+      position: absolute;
+      top: 25px;
+      width: 60px;
+      height: 60px;
+      right: -15px;
+      background-color: red;
+      border-radius: 0 0 60px 0;
+    }
+    .item:nth-child(10) .border-radius::after {
+      width: 60px;
+      height: 60px;
+      right: -20px;
+      top: 0px;
+      background-color: #fff;
+      border-radius: 0 0 60px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="item"><div class="border-radius"></div></div>
+    <div class="item"><div class="border-radius"></div></div>
+    <div class="item"><div class="border-radius"></div></div>
+    <div class="item"><div class="border-radius"></div></div>
+    <div class="item"><div class="border-radius"></div></div>
+    <div class="item"><div class="border-radius"></div></div>
+    <div class="item"><div class="border-radius"></div></div>
+    <div class="item"><div class="border-radius"></div></div>
+    <div class="item"><div class="border-radius"></div></div>
+    <div class="item"><div class="border-radius"></div></div>
+    <div class="item"><div class="border-radius"></div></div>
+    <div class="item"><div class="border-radius"></div></div>
+  </div>
+</body>
+</html>

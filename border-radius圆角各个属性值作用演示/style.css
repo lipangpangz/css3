@@ -1,0 +1,48 @@
+.container {
+	width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+}
+h1{
+	color : #666600;
+	margin-bottom:70px;
+}
+
+.demo {
+	width: 100px;
+	height: 200px;
+	border: 50px solid #003366;
+	float: left;
+}
+
+.range{
+	float: right;
+	font-size: 25px;
+}
+
+.range input{
+	width: 300px;
+}
+.range span{
+	display: inline-block;
+	width: 30px;
+}
+
+#showMsg {
+	position: absolute;
+	font-size: 30px;
+	top:30px;
+	left: 0;
+}
+
+button {
+	display: block;
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+	position: absolute;
+	right : 0;
+	top: 550px;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>阴阳图</title>
+  <style>
+    .box  {
+      position: relative;
+      margin: 100px auto;
+      width: 300px;
+      height: 150px;
+      background-color: #000;
+      border-bottom: 150px solid #fff;
+      border-radius: 50%;
+      box-shadow: 10px 10px 10px #aaa;
+    }
+    .item:nth-child(1)::after , .item:nth-child(1)::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      margin-left: -150px;
+      top: 75px;
+      border: 60px solid #000;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #fff;
+    }
+    .item:nth-child(1)::after {
+      margin-left: 0;
+      background-color: #000;
+      border-color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="item"></div>
+  </div>
+</body>
+</html>

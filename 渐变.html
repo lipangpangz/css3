@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>border-radius</title>
+  <style>
+    .box {
+      margin: 100px auto;
+      width: 900px;
+      height: 450px;
+    }
+    .item {
+      float: left;
+      margin: 10px 10px;
+      width: 200px;
+      height: 200px;
+      border-radius: 1px;
+      box-shadow: 5px 5px 10px #aaa;
+      display: flex;
+    }
+    .bjys {
+      width: 180px;
+      height: 80px;
+      margin: auto;
+    }
+    /* 默认的是从上往下走的  所以就是blue在上面 */
+    .item:nth-child(1) .bjys {
+      background-image: linear-gradient(blue,red);
+    }
+    /* 往左走blue在左 */
+    .item:nth-child(2) .bjys {
+      background-image: linear-gradient(to left,blue,red);
+    }
+    /* 右上角 */
+    .item:nth-child(3) .bjys {
+      background-image: linear-gradient(to right top,blue,red);
+    }
+    /* 角度的变化 默认的是180度的倍数  */
+    .item:nth-child(4) .bjys {
+      background-image: linear-gradient(90deg,blue,red);
+    }
+    .item:nth-child(5) .bjys {
+      background-image: linear-gradient(135deg,blue,red);
+    }
+    /* 各种颜色的占用的百分比渐变 */
+    .item:nth-child(6) .bjys {
+      background-image: linear-gradient(blue 50%,red 50%);
+    }
+    .item:nth-child(7) .bjys {
+      background-image: linear-gradient(to left,blue 50%,red 50%,green);
+    }
+    .item:nth-child(8) .bjys {
+      background-image: linear-gradient(to left,blue 20%,red 40%);
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="item"><div class="bjys"></div></div>
+    <div class="item"><div class="bjys"></div></div>
+    <div class="item"><div class="bjys"></div></div>
+    <div class="item"><div class="bjys"></div></div>
+    <div class="item"><div class="bjys"></div></div>
+    <div class="item"><div class="bjys"></div></div>
+    <div class="item"><div class="bjys"></div></div>
+    <div class="item"><div class="bjys"></div></div>
+    <div class="item"><div class="bjys"></div></div>
+    <div class="item"><div class="bjys"></div></div>
+  </div>
+</body>
+</html>

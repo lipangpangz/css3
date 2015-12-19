@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3转换</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: '微软雅黑';
+			background-color: #F7F7F7;
+		}
+
+		.wrapper {
+			width: 1024px;
+			margin: 0 auto;
+		}
+
+		.wrapper > section {
+			min-height: 300px;
+			margin-bottom: 30px;
+			box-shadow: 1px 1px 4px #DDD;
+			background-color: #FFF;
+		}
+
+		.wrapper > header {
+			text-align: center;
+			line-height: 1;
+			padding: 20px;
+			margin-bottom: 10px;
+			font-size: 30px;
+		}
+
+		.wrapper section > header {
+			line-height: 1;
+			padding: 10px;
+			font-size: 22px;
+			color: #333;
+			background-color: #EEE;
+		}
+
+		.wrapper .wrap-box {
+			padding: 20px;
+		}
+
+		.box {
+			width: 200px;
+			height: 200px;
+			background-color: yellow;
+			transition: all 1s;
+
+		}
+		
+		/*旋转*/
+		.rotate:hover .box {
+			transform: rotate(360deg);
+		}
+	
+		/*缩放*/
+		.scale:hover .box {
+			transform: scale(0.5);
+		}
+
+		/*倾斜*/
+		.skew .box {
+			transform: skew(45deg);
+		}
+
+		/*移动*/
+		.translate:hover .box {
+			transform: translate(400px);
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<header>CSS3-转换</header>
+		<section class="rotate">
+			<header>旋转</header>
+			<div class="wrap-box">
+				<div class="box"></div>
+			</div>
+		</section>
+		<section class="scale">
+			<header>缩放</header>
+			<div class="wrap-box">
+				<div class="box"></div>
+			</div>
+		</section>
+		<section class="translate">
+			<header>移动</header>
+			<div class="wrap-box">
+				<div class="box"></div>
+			</div>
+		</section>
+		<section class="skew">
+			<header>倾斜</header>
+			<div class="wrap-box">
+				<div class="box"></div>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

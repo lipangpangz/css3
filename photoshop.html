@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>photoshop</title>
+  <style>
+/*     .photo {
+  width: 623px;
+  height: 416px;
+  background: url(images/bg1.png) left top no-repeat, url(images/bg2.png) right top no-repeat, url(images/bg4.png) left bottom no-repeat, url(images/bg3.png) right bottom no-repeat,url(images/bg5.png) center center no-repeat;
+  animation: move 1s infinite linear;
+}@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 623px 416px;
+  }
+  100% {
+    background-position: center center;
+  }
+} */
+    .photo {
+      width: 623px;
+      height: 416px;
+      position: relative;
+    }
+    .sy {
+      position: absolute;
+      width: 312px;
+      height: 209px;
+      background: url(images/bg1.png) no-repeat;
+    }
+    .sz {
+      width: 311px;
+      height: 209px;
+      position: absolute;
+      left: 312px;
+      background: url(images/bg2.png) no-repeat;
+    }
+    .xz {
+      width: 312px;
+      height: 208px;
+      position: absolute;
+      top: 209px;
+      left: 312px;
+      background: url(images/bg3.png) no-repeat;
+    }
+    .xy {
+      width: 312px;
+      height: 208px;
+      position: absolute;
+      top: 209px;
+      background: url(images/bg4.png) no-repeat;
+    }
+    .sz, .sy, .xz, .xy {
+      transition: all 1s linear;
+    }
+    .photo:hover .sz{
+      background-position: 311px -209px;
+    }
+    .photo:hover .sy{
+      background-position: -312px -209px;
+    }
+    .photo:hover .xz{
+      background-position: 634px 418px;
+    }
+    .photo:hover .xy{
+      background-position: -311px 209px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="photo">
+    <div class="sz"></div>
+    <div class="sy"></div>
+    <div class="xz"></div>
+    <div class="xy"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS3伸缩布局</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: '微软雅黑';
+      background-color: #F7F7F7;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .wrapper {
+      width: 1024px;
+      margin: 0 auto;
+    }
+
+    .wrapper > section {
+      min-height: 300px;
+      margin-bottom: 30px;
+      box-shadow: 1px 1px 4px #DDD;
+      background-color: #FFF;
+    }
+
+    .wrapper > header {
+      text-align: center;
+      line-height: 1;
+      padding: 20px;
+      margin-bottom: 10px;
+      font-size: 30px;
+    }
+
+    .wrapper section > header {
+      line-height: 1;
+      padding: 10px;
+      font-size: 22px;
+      color: #333;
+      background-color: #EEE;
+    }
+
+    .wrapper .wrap-box {
+      padding: 20px;
+    }
+
+    .wrapper .flex-img {
+      width: 100%;
+    }
+
+    /* 全局设置 ul li 的样式 */
+    section ul {
+      display: flex;
+      flex-wrap: wrap;
+      height: 700px;
+    }
+    section ul li {
+      width: 200px;
+      height: 200px;
+      text-align: center;
+      line-height: 200px;
+      margin: 10px;
+      background-color: skyblue;
+    }
+    section:nth-child(3) ul {
+      align-content: flex-start;
+    }
+    section:nth-child(4) ul {
+      align-content: flex-end;
+    }
+    section:nth-child(5) ul {
+      align-content: center;
+    }
+    section:nth-child(6) ul {
+      align-content: space-between;
+    }
+    section:nth-child(7) ul {
+      align-content: stretch;
+    }
+    section:nth-child(8) ul {
+      align-content: space-around;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>CSS3-伸缩布局介绍</header>
+    <section class="brief">
+      <header>align-items</header>
+      <div class="wrap-box">
+        <p>堆栈排列，可对应用flex-wrap: wrap后产生的换行进行控制，包括flex-start、flex-end、center、space-between、space-around、stretch</p>
+      </div>
+    </section>
+    <section>
+      <header>align-content: flex-start;</header>
+      <div class="wrap-box">
+        <p>顶部对齐</p>
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <header>align-content: flex-end;</header>
+      <div class="wrap-box">
+        <p>底部对齐</p>
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <header>align-content: center;</header>
+      <div class="wrap-box">
+        <p>上下对齐居中</p>
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <header>align-content: space-between;</header>
+      <div class="wrap-box">
+        <p>上下对齐居中</p>
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <header>align-content: stretch;</header>
+      <div class="wrap-box">
+        <p>上下对齐居中</p>
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <header>align-content: space-around;</header>
+      <div class="wrap-box">
+        <p>上下对齐居中</p>
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

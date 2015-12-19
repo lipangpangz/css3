@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>背景改变</title>
+  <style>
+    body , ul {margin: 0;padding: 0;}
+    ul {list-style: none;}
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+    a {text-decoration: none;}
+    .bgchange{
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .bgimg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+    .bgimg li {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .bgimg .bgimg1 {
+      background-image: url(images/bag1.jpg);
+    }
+    .bgimg .bgimg2 {
+      background-image: url(images/bag2.jpg);
+    }
+    .bgimg .bgimg3 {
+      background-image: url(images/bag3.jpg);
+    }
+    .bgimg .bgimg4 {
+      background-image: url(images/bag4.jpg);
+    }
+    .bgimg .bgimg5 {
+      background-image: url(images/bag5.jpg);
+      /* background: url(images/bg5_r1.jpg) left top no-repeat, url(images/bg5_r2.jpg) right top no-repeat, url(images/bg5_r3.jpg) left bottom no-repeat, url(images/bg5_r4.jpg) right bottom no-repeat; */
+    }
+    }
+    .conture {
+      width: 100%;
+      height: 150px;
+      position: absolute;
+      bottom: 100px;
+      text-align: center;
+      z-index: 9999;
+    }
+    .conture li a:before ,.conture li a:after  {
+      content: "";
+      border: 5px solid #fff;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background-size: cover;
+      position: absolute;
+      left: 50%;
+      z-index: 9998;
+    }
+    .conture li:nth-child(1) a:before {
+      background-image: url(images/bag1.jpg);
+      margin-left: -380px;
+    }
+    .conture li:nth-child(2) a:before {
+      background-image: url(images/bag2.jpg);
+      margin-left: -220px;
+    }
+    .conture li:nth-child(3) a:before {
+      background-image: url(images/bag3.jpg);
+      margin-left: -60px;
+    }
+    .conture li:nth-child(4) a:before {
+      background-image: url(images/bag4.jpg);
+      margin-left: 100px;
+    }
+    .conture li:nth-child(5) a:before {
+      background-image: url(images/bag5.jpg);
+      margin-left: 260px;
+    }
+    /* 下面的盒子的样式 */
+    .conture li a:after {
+      content: "";
+      padding-top: 80px;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      font-size: 22px;
+      font-family: "微软雅黑";
+      height: 50px;
+      width: 146px;
+      border: 2px solid #fff;
+      top: 50px;
+      border-radius: 5px;
+      left: 50%;
+      z-index: 999;
+    }
+    .conture li:nth-child(1) a:after {
+      content: "从左边进来";
+      background-image: linear-gradient(to bottom,  #dcc8af, #644f56);
+      margin-left: -390px;
+    }
+    .conture li:nth-child(2) a:after {
+      content: "从中间放大";
+      background-image: linear-gradient(to bottom,  #b5c8ce, #8f91aa);
+      margin-left: -230px;
+    }
+    .conture li:nth-child(3) a:after {
+      content: "旋转放大";
+      background-image: linear-gradient(to bottom,  #fcf6d8, #ab8b90);
+      margin-left: -70px;
+    }
+    .conture li:nth-child(4) a:after {
+      content: "XY旋转放大";
+      background-image: linear-gradient(to bottom, #FEC6B7, #60342B);
+      margin-left: 90px;
+    }
+    .conture li:nth-child(5) a:after {
+      content: "从四个角来";
+      background-image: linear-gradient(to bottom, #92B906, #137506);
+      margin-left: 250px;
+    }
+    /* 动画进行的内容 */
+    .bgimg1:target {
+        z-index: 100;
+        animation-name: bgimg1;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+      }
+
+      .bgimg2:target {
+        z-index: 100;
+        animation-name: bgimg2;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+      }
+
+      .bgimg3:target{
+        z-index: 100;
+        animation-name: bgimg3;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+      }
+
+      .bgimg4:target{
+        z-index: 100;
+        animation-name: bgimg4;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+      }
+
+      .bgimg5:target{
+        z-index: 100;
+        animation-name: bgimg5;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+      }
+      /*定义动画*/
+      /*定义从左边进入动画，图片从左向右出现*/
+
+      @keyframes bgimg1 {
+        0% {
+          /* left: -1000px; */
+          transform: translate(-100%,0);
+        }
+
+        100% {
+          /* left: 0; */
+          transform: translate(0,0);
+        }
+      }
+
+      /*定义放大动画，图片由小变大放大出现*/
+      @keyframes bgimg2 {
+        0% {
+          transform: scale(0.1);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+      /* 定义旋转的动画 */
+      @keyframes bgimg3 {
+        0% {
+          transform: rotate(-360deg) scale(0.1);
+        }
+
+        100% {
+          transform: rotate(0deg) scale(1);
+        }
+      }
+      /* 定义旋转的动画 */
+      @keyframes bgimg4 {
+        0% {
+          transform: rotateX(180deg) rotateY(180deg) scale(0.1);
+        }
+
+        100% {
+          transform: rotateX(0deg) rotateY(0deg) scale(1);
+        }
+      }
+      /* 定义旋转的动画 */
+      @keyframes bgimg5 {
+        0% {
+          transform: rotateX(360deg) rotateY(360deg) scale(0.1);
+        }
+        50% {
+          transform: rotateX(180deg) rotateY(180deg) scale(0.5);
+        }
+        100% {
+          transform: rotateX(0deg) rotateY(0deg) scale(1);
+        }
+      }
+  </style>
+</head>
+<body>
+<div class="bgchange">
+  <ul class="bgimg">
+    <li id="bgmg1" class="bgimg1"></li>
+    <li id="bgmg2" class="bgimg2"></li>
+    <li id="bgmg3" class="bgimg3"></li>
+    <li id="bgmg4" class="bgimg4"></li>
+    <li id="bgmg5" class="bgimg5">
+      <div class="moving1"></div>
+      <div class="moving2"></div>
+      <div class="moving3"></div>
+      <div class="moving4"></div>
+    </li>
+  </ul>
+  <ul class="conture">
+    <li><a href="#bgmg1"></a></li>
+    <li><a href="#bgmg2"></a></li>
+    <li><a href="#bgmg3"></a></li>
+    <li><a href="#bgmg4"></a></li>
+    <li><a href="#bgmg5"></a></li>
+  </ul>
+</div>
+</body>
+</html>

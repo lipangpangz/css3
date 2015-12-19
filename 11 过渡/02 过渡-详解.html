@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3过渡</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: '微软雅黑';
+			background-color: #F7F7F7;
+		}
+
+		.wrapper {
+			width: 1024px;
+			margin: 0 auto;
+		}
+
+		.wrapper > section {
+			min-height: 300px;
+			margin-bottom: 30px;
+			box-shadow: 1px 1px 4px #DDD;
+			background-color: #FFF;
+		}
+
+		.wrapper > header {
+			text-align: center;
+			line-height: 1;
+			padding: 20px;
+			margin-bottom: 10px;
+			font-size: 30px;
+		}
+
+		.wrapper section > header {
+			line-height: 1;
+			padding: 10px;
+			font-size: 22px;
+			color: #333;
+			background-color: #EEE;
+		}
+
+		.wrapper .wrap-box {
+			padding: 20px;
+			position: relative;
+		}
+
+		.transition {
+			width: 200px;
+			height: 100px;
+			background-color: yellow;
+			position: absolute;
+			left: 20px;
+			transition: left 2s;
+		}
+		.wrapper .wrap-box {
+			padding: 20px;
+			position: relative;
+		}
+
+		.move:hover .transition {
+			left: 750px;
+			background-color: red;
+		}
+
+		.transition1 {
+			width: 200px;
+			height: 100px;
+			background-color: skyblue;
+			position: absolute;
+			left: 20px;
+			top: 100px;
+			transition: all 2s;
+		}
+
+		.move:hover .transition1 {
+			width: 100px;
+			height: 200px;
+			left: 750px;
+			top: 0;
+			background-color: green;
+		}
+		.sb .bgbig{
+			margin: 30px;
+			width: 200px;
+			height: 200px;
+			background: url(images/bg.jpg) no-repeat center;
+			background-size: 100% auto;
+			transition: background-size 2s;
+		}
+		.sb:hover .bgbig{
+			background-size: 200%;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<header>CSS3-过渡详解</header>
+		<section class="move">
+			<header>移动</header>
+			<div class="wrap-box">
+				<div class="transition"></div>
+			</div>
+			<div class="wrap-box">
+				<div class="transition1"></div>
+			</div>
+		</section>
+		<section class="sb">
+			<header>背景变大</header>
+			<div class="bgbig"></div>
+		</section>
+		<section class="linear">
+			<header>linear</header>
+			<div class="wrap-box"></div>
+		</section>
+		<section class="ease">
+			<header>ease</header>
+			<div class="wrap-box"></div>
+		</section>
+		<section class="ease-in">
+			<header>ease-in</header>
+			<div class="wrap-box"></div>
+		</section>
+		<section class="ease-out">
+			<header>ease-out</header>
+			<div class="wrap-box"></div>
+		</section>
+		<section class="ease-in-out">
+			<header>ease-in-out</header>
+			<div class="wrap-box"></div>
+		</section>
+	</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>background attribute</title>
+  <style>
+    .bgop {
+      width: 200px;
+      height: 200px;
+      margin: 100px auto;
+      border: 1px solid purple;
+      position: relative;
+      background: url(images/bg.jpg) no-repeat;
+      background-size: 100%;
+    }
+    .img {
+      width: 100%;
+      height: 100%;
+      padding: 30px;
+      position: absolute;
+      background-clip: content-box;
+      background-origin: padding-box;/* 这个是一padding为原点来剪切的 */
+      box-sizing: border-box;
+      background-color: #fff;
+    }
+    .bgop::after{
+      content: "";
+      width: 100%;
+      height: 100%;
+      padding: 30px;
+      background: url(images/bg.jpg) no-repeat;
+      background-size: 100%; /* 盒子的背景颜色是平铺的拉伸过的 */
+      position: absolute;
+      left: -200px;
+      box-sizing: border-box;/*盒模型 及盒子的组成   不会因为padding的变化是这个盒子变化*/
+      background-clip: content-box;/*是从盒子的真实的宽度来切的*/
+      background-origin: content-box;/*相对的位置，及坐标的原点*/
+
+    }
+
+  </style>
+</head>
+<body>
+<div class="bgop">
+  <div class="img"></div>
+</div>
+</body>
+</html>

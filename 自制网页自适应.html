@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>自适应</title>
+  <style>
+    * {margin: 0;padding: 0;}
+    ul {list-style: none;}
+    .biggest {
+      width: 480px;
+      height: 500px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      line-height: 50px;
+    }
+    .header {
+      background-color: dodgerblue;
+    }
+    /* 中间部分的自适应 */
+
+    .content {
+      display: flex;
+      flex: 1;
+    }
+    .content ul {
+      display: flex;
+      flex: 1;
+    }
+    .content .aside {
+      width: 150px;
+      background-color: blueviolet;
+    }
+    .content .rcontent {
+      flex: 1;
+      background-color: skyblue;
+    }
+
+    /* 底部的导航栏的自适应 */
+    .footer {
+      background-color: dodgerblue;
+    }
+    .footer ul {
+      display: flex;
+      text-align: center;
+    }
+    .footer ul li{
+      height: 100%;
+      flex: 1;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="biggest">
+    <div class="header">
+      导航栏
+    </div>
+    <div class="content">
+      <ul>
+        <li class="aside">我是左边的侧栏</li>
+        <li class="rcontent">我是右边的内容</li>
+      </ul>
+    </div>
+    <div class="footer">
+      <ul>
+        <li>音乐</li>
+        <li>电视</li>
+        <li>电影</li>
+        <li>动漫</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

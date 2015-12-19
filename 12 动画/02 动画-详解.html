@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3动画</title>
+	<style>
+		/*其中有3个参数与过渡一致即 transition-delay、transition-timing-function、transition-duration*/
+
+		.animation {
+			width: 30px;
+			height: 30px;
+			background-color: blue;
+			/*动画名称*/
+			animation-name: change;
+			/*动画持续时间*/
+			animation-duration: 1s;
+			/*动画结束后的状态*/
+			animation-fill-mode: forwards;
+			/*无限次播放*/
+			animation-iteration-count: infinite;
+			/*动画延时*/
+			animation-delay: 1s;
+			/*动画暂停*/
+			animation-play-state: paused;
+			/*动画反方向*/
+			animation-direction: alternate;
+			/*动画速度*/
+			animation-timing-function: linear;
+		}
+
+		/*动画序列*/
+		@keyframes change {
+			0% {
+				width: 40px;
+				height: 40px;
+			}
+
+			100% {
+				width: 200px;
+				height: 200px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="animation"></div>
+</body>
+</html>

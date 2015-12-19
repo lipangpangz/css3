@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 跳动的心</title>
+	<style>
+		html, body {
+			height: 100%;
+		}
+
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		.heart {
+			width: 220px;
+			height: 500px;
+			margin: 40px auto;
+			position: relative;
+		}
+
+		.left, .right, .bottom {
+			display: block;
+			width: 220px;
+			height: 220px;
+			position: absolute;
+			background-color: red;
+			animation: beat 0.7s infinite;
+
+		}
+
+		.left, .right {
+			border-radius: 110px;
+		}
+
+		.left {
+			z-index: 3;
+			left: -80px;
+		}
+
+		.right {
+			z-index: 2;
+			right: -80px;
+		}
+
+		.bottom {
+			z-index: 1;
+			top: 80px;
+			transform: rotate(225deg);
+		}
+
+		@keyframes beat {
+			0% {
+				transform: rotate(225deg) scale(1);
+			}
+
+			50% {
+				transform: rotate(225deg) scale(1.1);
+			}
+
+			100% {
+				transform: scale(1) rotate(225deg);
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<div class="heart">
+		<span class="left"></span>
+		<span class="right"></span>
+		<span class="bottom"></span>
+	</div>
+</body>
+</html>

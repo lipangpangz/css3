@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>镜像渐变</title>
+  <style>
+    body {
+      background-color: #f7f7f7;
+    }
+    .box {
+      margin: 100px auto;
+      width: 900px;
+      height: 450px;
+    }
+    .item {
+      background-color: #fff;
+      float: left;
+      margin: 10px 10px;
+      width: 200px;
+      height: 200px;
+      border-radius: 1px;
+      box-shadow: 5px 5px 10px #aaa;
+      display: flex;
+      position: relative;
+    }
+    .item:after {
+      content: attr(data-brief);
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      line-height: 210px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #FFF;
+      font-family: '微软雅黑';
+      font-size: 18px;
+      background-color: rgba(170, 170, 170, 0);
+      z-index: -1;
+      transition: all 0.3s ease-in;
+    }
+    .item:hover:after {
+      background-color: rgba(170, 170, 170, 0.6);
+      z-index: 100;
+    }
+    .border-radius {
+      width: 180px;
+      height: 180px;
+      margin: auto;
+    }
+    .item:nth-child(2) .border-radius {
+      background-image:radial-gradient(circle farthest-corner, #f00, #ff0, #080);
+    }
+    .item:nth-child(1) .border-radius {
+      background-image:radial-gradient(100px at center center, #ff0, #080);
+    }
+    .item:nth-child(3) .border-radius {
+      background-image:radial-gradient(circle, #f00, #ff0, #000);
+    }
+    .item:nth-child(4) .border-radius {
+      background-image:radial-gradient(circle at center, #f00, #ff0, #000);
+    }
+    .item:nth-child(5) .border-radius {
+      background-image:radial-gradient(circle at 50%, #f00, #ff0, #000);
+    }
+    .item:nth-child(6) .border-radius {
+      width: 180px;
+      height: 90px;
+      background-image:radial-gradient(farthest-side, #f00, #ff0, #080);
+    }
+    .item:nth-child(7) .border-radius {
+      background-image: radial-gradient(
+        circle,
+        blue 25%,
+        transparent 25%,
+        transparent 50%,
+        blue 50%,
+        blue 75%,
+        transparent 75%,
+        transparent 100%
+      );
+      background-size: 40px 40px;
+    }
+    .item:nth-child(8) .border-radius {
+      width: 180px;
+      height: 50px;
+      background-color: yellow;
+      background-image: linear-gradient(
+        135deg,
+        blue 25%,
+        transparent 25%,
+        transparent 50%,
+        blue 50%,
+        blue 75%,
+        transparent 75%,
+        transparent 100%
+      );
+      background-size: 40px 40px;
+      background-position: 0 0;
+      animation: move 0.5s infinite linear;
+    }
+    @keyframes move {
+      0%{
+        background-position: 0 0;
+      }
+      100%{
+        background-position: 40px 0;
+      }
+    }
+    .item:nth-child(9){
+      overflow: hidden;
+    }
+    .item:nth-child(9) .border-radius {
+      background-image: radial-gradient(
+        circle,
+        blue 10%,
+        transparent 10%,
+        transparent 20%,
+        red 20%,
+        red 30%,
+        green 30%,
+        green 40%,
+        skyblue 40%,
+        skyblue 50%,
+        blue 50%,
+        blue 60%,
+        orange 60%,
+        orange 70%,
+        transparent 70%,
+        transparent 80%,
+        green 80%,
+        green 90%,
+        transparent 90%,
+        transparent 100%
+      );
+      border-radius: 50%;
+      transform: rotate(40deg);
+      animation: change 1s infinite linear;
+    }
+    @keyframes change {
+      0%{
+        transform: rotate(40deg) scale(1);
+      }
+      50%{
+        transform: rotate(40deg) scale(1.5);
+      }
+      100%{
+        transform: rotate(40deg) scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+    <div class="item" data-brief="100px at center center"><div class="border-radius"></div></div>
+    <div class="item" data-brief="圆心渐变circle"><div class="border-radius"></div></div>
+    <div class="item" data-brief="circle farthest-corner"><div class="border-radius"></div></div>
+    <div class="item" data-brief="circle at center"><div class="border-radius"></div></div>
+    <div class="item" data-brief="circle at 50%"><div class="border-radius"></div></div>
+    <div class="item" data-brief="椭圆渐变"><div class="border-radius"></div></div>
+    <div class="item" data-brief="circle渐变"><div class="border-radius"></div></div>
+    <div class="item" data-brief="缓冲条"><div class="border-radius"></div></div>
+    <div class="item" data-brief="飞镖盘"><div class="border-radius"></div></div>
+</body>
+</html>

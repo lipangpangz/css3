@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3转换</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: '微软雅黑';
+			background-color: #F7F7F7;
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		.wrapper {
+			width: 1024px;
+			margin: 0 auto;
+		}
+
+		.wrapper > section {
+			min-height: 300px;
+			margin-bottom: 30px;
+			box-shadow: 1px 1px 4px #DDD;
+			background-color: #FFF;
+		}
+
+		.wrapper > header {
+			text-align: center;
+			line-height: 1;
+			padding: 20px;
+			margin-bottom: 10px;
+			font-size: 30px;
+		}
+
+		.wrapper section > header {
+			line-height: 1;
+			padding: 10px;
+			font-size: 22px;
+			color: #333;
+			background-color: #EEE;
+		}
+
+		.wrapper .wrap-box {
+			padding: 20px;
+		}
+
+		.wrapper .brief {
+			min-height: auto;
+		}
+
+		.box {
+			width: 160px;
+			height: 160px;
+			background-color: yellow;
+			margin: 15px auto 0;
+			transition: all 1s;
+		}
+
+		.rotate:hover .box {
+			transform: rotate(45deg);
+		}
+
+		.rotate-reverse:hover .box {
+			transform: rotate(-45deg);
+		}
+
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<header>CSS3-旋转</header>
+		<!-- 简介 -->
+		<section class="brief">
+			<header>rotate</header>
+			<div class="wrap-box">
+				<p>通过 rotate() 方法，元素可以实现旋转效果，允许负值，元素将逆时针旋转。</p>
+				<p>使用方法如：transform: rotate(45deg)、transform: rotate(-90deg)</p>
+			</div>
+		</section>
+		<!-- 分隔线 -->
+		<section class="rotate">
+			<header>顺时针旋转</header>
+			<div class="wrap-box">
+				<div class="box"></div>
+			</div>
+		</section>
+		<section class="rotate-reverse">
+			<header>逆时针旋转</header>
+			<div class="wrap-box">
+				<div class="box"></div>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

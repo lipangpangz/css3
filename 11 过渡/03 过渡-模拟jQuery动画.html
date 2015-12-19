@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3过渡</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: '微软雅黑';
+			background-color: #F7F7F7;
+		}
+
+		.wrapper {
+			width: 1024px;
+			margin: 0 auto;
+		}
+
+		.wrapper > section {
+			min-height: 300px;
+			margin-bottom: 30px;
+			box-shadow: 1px 1px 4px #DDD;
+			background-color: #FFF;
+		}
+
+		.wrapper > header {
+			text-align: center;
+			line-height: 1;
+			padding: 20px;
+			margin-bottom: 10px;
+			font-size: 30px;
+		}
+
+		.wrapper section > header {
+			line-height: 1;
+			padding: 10px;
+			font-size: 22px;
+			color: #333;
+			background-color: #EEE;
+		}
+
+		.wrapper .wrap-box {
+			padding: 20px;
+			width: 200px;
+			height: 200px;
+			background-color: skyblue;
+			display: block;
+			transition: all 3s;
+		}
+		.show .wrap-box {
+			display: none;
+		}
+		.show:hover .wrap-box {
+			display: block;
+		}
+		.hide:hover .wrap-box {
+				display: none;
+		}
+		.fadeIn .wrap-box {
+			background-color: #fff;
+		}
+		.fadeIn:hover .wrap-box {
+			background-color: skyblue;
+		}
+		.fadeOut:hover .wrap-box {
+			background-color: #fff;
+		}
+		.jiafa .wrap-box {
+			background-color: #fff;
+		}
+		.jiafa:hover .wrap-box {
+			display: block;
+			height: 100px;
+			width: 100px;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<header>CSS3-模拟jQuery动画</header>
+		<section class="show">
+			<header>show</header>
+			<div class="wrap-box"></div>
+		</section>
+		<section class="hide">
+			<header>hide</header>
+			<div class="wrap-box"></div>
+		</section>
+		<section class="fadeIn">
+			<header>fadeIn</header>
+			<div class="wrap-box"></div>
+		</section>
+		<section class="fadeOut">
+			<header>fadeOut</header>
+			<div class="wrap-box"></div>
+		</section>
+		<section class="jiafa">
+			<header>综合</header>
+			<div class="wrap-box"></div>
+		</section>
+	</div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>colock</title>
+  <style>
+    *{margin: 0;padding: 0;}
+    .clock {
+      width: 400px;
+      height: 400px;
+      position: relative;
+      margin: 100px auto;
+    }
+    .biaop {
+      width: 200px;
+      height: 200px;
+      border: 10px solid #000;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      margin-left: -110px;
+    }
+    .line1 , .line2 ,  .line3 , .line4 , .line5 , .line6 {
+      height: 200px;
+      width: 4px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      top: 10px;
+      margin-left: -2px;
+      background-color: #888;
+    }
+    .line1 , .line6{
+      width: 6px;
+      background-color: #444;
+      margin-left: -3px;
+    }
+    .line2 {
+      transform: rotate(30deg);
+    }
+    .line3 {
+      transform: rotate(60deg);
+    }
+    .line4 {
+      transform: rotate(-60deg);
+    }
+    .line5 {
+      transform: rotate(-30deg);
+    }
+    .line6 {
+      transform: rotate(90deg);
+    }
+    .cover {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      margin: 25px 0 0 -85px;
+      background-color: #fff;
+    }
+    .point {
+      background-color: #000;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 100px;
+      left: 50%;
+      margin-left: -10px;
+      border-radius: 50%;
+      z-index: 2;
+    }
+    .hour {
+      height: 60px;
+      width: 6px;
+      top: 50px;
+      margin-left: -3px;
+      background-color: #222;
+      animation: rotate 43200s steps(60) infinite;
+    }
+    .minate {
+      height: 70px;
+      width: 4px;
+      top: 40px;
+      margin-left: -2px;
+      background-color: #555;
+      animation: rotate 3600s steps(60) infinite;
+    }
+    .scends {
+      height: 80px;
+      width: 2px;
+      top: 30px;
+      margin-left: -1px;
+      background-color: #f00;
+      animation: rotate 60s steps(60) infinite;
+    }
+    .hour , .minate , .scends {
+      position: absolute;
+      transform-origin: bottom;
+      left: 50%;
+    }
+    @keyframes rotate{
+      from{
+
+      }
+      to{
+        transform: rotate(360deg);
+      }
+    }
+
+  </style>
+</head>
+<body>
+<div class="clock">
+  <div class="biaop"></div>
+  <div class="line1"></div>
+  <div class="line2"></div>
+  <div class="line3"></div>
+  <div class="line4"></div>
+  <div class="line5"></div>
+  <div class="line6"></div>
+  <div class="cover"></div>
+  <div class="point"></div>
+  <div class="hour"></div>
+  <div class="minate"></div>
+  <div class="scends"></div>
+</div>
+</body>
+</html>
